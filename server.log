@@ -1,0 +1,1779 @@
+nohup: ignoring input
+$ node app/src/Server.js app/src/Server.js
+[dotenv@17.2.3] injecting env (273) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+[[36m12/1/2025, 12:28:37:972[39m] [[33mHtmlInjector[39m] [32mfilesPath cached[39m [
+  [32m'/home/noman-dev3/Downloads/mirotalksfu-main/public/views/landing.html'[39m,
+  [32m'/home/noman-dev3/Downloads/mirotalksfu-main/public/views/dashboard.html'[39m,
+  [32m'/home/noman-dev3/Downloads/mirotalksfu-main/public/views/newroom.html'[39m,
+  [32m'/home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html'[39m,
+  [32m'/home/noman-dev3/Downloads/mirotalksfu-main/public/views/login.html'[39m,
+  [32m'/home/noman-dev3/Downloads/mirotalksfu-main/public/views/whoAreYou.html'[39m,
+  [32m'/home/noman-dev3/Downloads/mirotalksfu-main/public/views/activeRooms.html'[39m
+]
+[[36m12/1/2025, 12:28:38:030[39m] [[33mServer[39m] [32mWORKERS:[39m [33m4[39m
+[[36m12/1/2025, 12:28:38:050[39m] [[33mServer[39m] 
+    
+        ███████╗██╗ ██████╗ ███╗   ██╗      ███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ 
+        ██╔════╝██║██╔════╝ ████╗  ██║      ██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗
+        ███████╗██║██║  ███╗██╔██╗ ██║█████╗███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝
+        ╚════██║██║██║   ██║██║╚██╗██║╚════╝╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗
+        ███████║██║╚██████╔╝██║ ╚████║      ███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║
+        ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝      ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝ started...
+    
+        
+[[36m12/1/2025, 12:28:38:051[39m] [[33mServer[39m] [32mServer config[39m {
+  network: {
+    server_listen: [32m'https://localhost:3010'[39m,
+    server_tunnel: [33mfalse[39m,
+    trust_proxy: [33mfalse[39m,
+    sfu: {
+      announcedIP: [32m'192.168.2.103'[39m,
+      listenIP: [32m'0.0.0.0'[39m,
+      numWorker: [33m4[39m,
+      rtcMinPort: [33m40000[39m,
+      rtcMaxPort: [33m40100[39m
+    },
+    ngrok_enabled: [33mfalse[39m
+  },
+  security: {
+    cors: { origin: [32m'*'[39m, methods: [ [32m'GET'[39m, [32m'POST'[39m ] },
+    jwtCfg: { JWT_KEY: [32m'mirotalksfu_jwt_secret'[39m, JWT_EXP: [32m'1h'[39m },
+    host: {
+      presenters: {
+        list: [ [32m'Miroslav Pejic'[39m, [32m'miroslav.pejic.85@gmail.com'[39m ],
+        join_first: [33mtrue[39m
+      }
+    },
+    ip_lookup: [33mfalse[39m,
+    oidc: [33mfalse[39m,
+    middleware: { IpWhitelist: [33mfalse[39m }
+  },
+  api: {
+    rest_api: {
+      basePath: [32m'/api/v1'[39m,
+      docs: [32m'https://localhost:3010/api/v1/docs'[39m,
+      allowed: {
+        stats: [33mtrue[39m,
+        meetings: [33mfalse[39m,
+        meeting: [33mtrue[39m,
+        join: [33mtrue[39m,
+        token: [33mfalse[39m,
+        slack: [33mtrue[39m,
+        mattermost: [33mtrue[39m
+      }
+    },
+    webhook: [33mfalse[39m
+  },
+  media: {
+    mediasoup: {
+      listenInfos: [
+        {
+          protocol: [32m'udp'[39m,
+          ip: [32m'0.0.0.0'[39m,
+          announcedAddress: [32m'192.168.2.103'[39m,
+          portRange: { min: [33m40000[39m, max: [33m40100[39m }
+        },
+        {
+          protocol: [32m'tcp'[39m,
+          ip: [32m'0.0.0.0'[39m,
+          announcedAddress: [32m'192.168.2.103'[39m,
+          portRange: { min: [33m40000[39m, max: [33m40100[39m }
+        }
+      ],
+      worker_bin: [32m'/home/noman-dev3/Downloads/mirotalksfu-main/node_modules/mediasoup/worker/out/Release/mediasoup-worker'[39m
+    },
+    rtmp: [33mfalse[39m,
+    videoAI: [33mfalse[39m,
+    server_recording: [33mfalse[39m
+  },
+  integrations: {
+    discord: [33mfalse[39m,
+    mattermost: [33mfalse[39m,
+    slack: [33mfalse[39m,
+    chatGPT: [33mfalse[39m,
+    deepSeek: [33mfalse[39m,
+    email_alerts: [33mfalse[39m
+  },
+  ui: {
+    brand: {
+      htmlInjection: [33mtrue[39m,
+      app: {
+        language: [32m'en'[39m,
+        name: [32m'MiroTalk SFU'[39m,
+        title: [32m'<h1>MiroTalk SFU</h1> Free browser based Real-time video calls.<br />Simple, Secure, Fast.'[39m,
+        description: [32m'Start your next video call with a single click. No download, plug-in, or login is required.'[39m,
+        joinDescription: [32m'Pick a room name.<br />How about this one?'[39m,
+        joinButtonLabel: [32m'JOIN ROOM'[39m,
+        joinLastLabel: [32m'Your recent room:'[39m
+      },
+      site: {
+        title: [32m'MiroTalk SFU, Free Video Calls, Messaging and Screen Sharing'[39m,
+        icon: [32m'../images/logo.svg'[39m,
+        appleTouchIcon: [32m'../images/logo.svg'[39m,
+        newRoomTitle: [32m'Pick name. <br />Share URL. <br />Start conference.'[39m,
+        newRoomDescription: [32m'Each room has its disposable URL. Just pick a name and share.'[39m
+      },
+      meta: {
+        description: [32m'MiroTalk SFU powered by WebRTC and mediasoup for real-time video communications.'[39m,
+        keywords: [32m'webrtc, video calls, conference, screen sharing, mirotalk, sfu'[39m
+      },
+      og: {
+        type: [32m'app-webrtc'[39m,
+        siteName: [32m'MiroTalk SFU'[39m,
+        title: [32m'Click the link to make a call.'[39m,
+        description: [32m'MiroTalk SFU provides real-time video calls and screen sharing.'[39m,
+        image: [32m'https://sfu.mirotalk.com/images/mirotalksfu.png'[39m,
+        url: [32m'https://sfu.mirotalk.com'[39m
+      },
+      html: {
+        topSponsors: [33mtrue[39m,
+        features: [33mtrue[39m,
+        teams: [33mtrue[39m,
+        tryEasier: [33mtrue[39m,
+        poweredBy: [33mtrue[39m,
+        sponsors: [33mtrue[39m,
+        advertisers: [33mtrue[39m,
+        supportUs: [33mtrue[39m,
+        footer: [33mtrue[39m
+      },
+      whoAreYou: {
+        title: [32m'Who are you?'[39m,
+        description: [32m"If you're the presenter, please log in now.<br />Otherwise, kindly wait for the presenter to join."[39m,
+        buttonLoginLabel: [32m'LOGIN'[39m,
+        buttonJoinLabel: [32m'JOIN ROOM'[39m
+      },
+      about: {
+        imageUrl: [32m'../images/mirotalk-logo.gif'[39m,
+        title: [32m'WebRTC SFU v2.0.39'[39m,
+        html: [32m'\n'[39m +
+          [32m'                    <button id="support-button" data-umami-event="Support button"\n'[39m +
+          [32m`                        onclick="window.open('https://codecanyon.net/user/miroslavpejic85', '_blank')">\n`[39m +
+          [32m'                        <i class="fas fa-heart"></i> Support\n'[39m +
+          [32m'                    </button>\n'[39m +
+          [32m'                    <br />\n'[39m +
+          [32m'                    <br />\n'[39m +
+          [32m'                    Author: \n'[39m +
+          [32m'                    <a id="linkedin-button" data-umami-event="Linkedin button"\n'[39m +
+          [32m'                        href="https://www.linkedin.com/in/miroslav-pejic-976a07101/" \n'[39m +
+          [32m'                        target="_blank">\n'[39m +
+          [32m'                        Miroslav Pejic\n'[39m +
+          [32m'                    </a>\n'[39m +
+          [32m'                    <br />\n'[39m +
+          [32m'                    Email: \n'[39m +
+          [32m'                    <a id="email-button" data-umami-event="Email button"\n'[39m +
+          [32m'                        href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk SFU info">\n'[39m +
+          [32m'                        miroslav.pejic.85@gmail.com\n'[39m +
+          [32m'                    </a>\n'[39m +
+          [32m'                    <hr />\n'[39m +
+          [32m'                    <span>\n'[39m +
+          [32m'                        &copy; 2025 MiroTalk SFU, all rights reserved\n'[39m +
+          [32m'                    </span>\n'[39m +
+          [32m'                    <hr />\n'[39m +
+          [32m'                    '[39m
+      },
+      widget: {
+        enabled: [33mfalse[39m,
+        roomId: [32m'support-room'[39m,
+        theme: [32m'dark'[39m,
+        widgetState: [32m'minimized'[39m,
+        widgetType: [32m'support'[39m,
+        supportWidget: {
+          position: [32m'top-right'[39m,
+          expertImages: [
+            [32m'https://photo.cloudron.pocketsolution.net/uploads/original/95/7d/a5f7f7a2c89a5fee7affda5f013c.jpeg'[39m
+          ],
+          buttons: {
+            audio: [33mtrue[39m,
+            video: [33mtrue[39m,
+            screen: [33mtrue[39m,
+            chat: [33mtrue[39m,
+            join: [33mtrue[39m
+          },
+          checkOnlineStatus: [33mfalse[39m,
+          isOnline: [33mtrue[39m,
+          customMessages: {
+            heading: [32m'Need Help?'[39m,
+            subheading: [32m'Get instant support from our expert team!'[39m,
+            connectText: [32m'connect in < 5 seconds'[39m,
+            onlineText: [32m'We are online'[39m,
+            offlineText: [32m'We are offline'[39m,
+            poweredBy: [32m'Powered by MiroTalk SFU'[39m
+          }
+        },
+        alert: { enabled: [33mfalse[39m, type: [32m'email'[39m }
+      }
+    },
+    buttons: {
+      popup: { shareRoomPopup: [33mtrue[39m, shareRoomQrOnHover: [33mtrue[39m },
+      main: {
+        shareButton: [33mtrue[39m,
+        hideMeButton: [33mtrue[39m,
+        fullScreenButton: [33mtrue[39m,
+        startAudioButton: [33mtrue[39m,
+        startVideoButton: [33mtrue[39m,
+        startScreenButton: [33mtrue[39m,
+        swapCameraButton: [33mtrue[39m,
+        chatButton: [33mtrue[39m,
+        participantsButton: [33mtrue[39m,
+        pollButton: [33mtrue[39m,
+        editorButton: [33mtrue[39m,
+        raiseHandButton: [33mtrue[39m,
+        transcriptionButton: [33mtrue[39m,
+        whiteboardButton: [33mtrue[39m,
+        documentPiPButton: [33mtrue[39m,
+        snapshotRoomButton: [33mtrue[39m,
+        emojiRoomButton: [33mtrue[39m,
+        settingsButton: [33mtrue[39m,
+        aboutButton: [33mtrue[39m,
+        exitButton: [33mtrue[39m,
+        extraButton: [33mtrue[39m
+      },
+      settings: {
+        activeRooms: [33mtrue[39m,
+        fileSharing: [33mtrue[39m,
+        lockRoomButton: [33mtrue[39m,
+        unlockRoomButton: [33mtrue[39m,
+        broadcastingButton: [33mtrue[39m,
+        lobbyButton: [33mtrue[39m,
+        sendEmailInvitation: [33mtrue[39m,
+        micOptionsButton: [33mtrue[39m,
+        tabRTMPStreamingBtn: [33mtrue[39m,
+        tabNotificationsBtn: [33mtrue[39m,
+        tabModerator: [33mtrue[39m,
+        tabRecording: [33mtrue[39m,
+        host_only_recording: [33mtrue[39m,
+        pushToTalk: [33mtrue[39m,
+        keyboardShortcuts: [33mtrue[39m,
+        virtualBackground: [33mtrue[39m,
+        customNoiseSuppression: [33mtrue[39m
+      },
+      producerVideo: {
+        videoPictureInPicture: [33mtrue[39m,
+        videoMirrorButton: [33mtrue[39m,
+        fullScreenButton: [33mtrue[39m,
+        snapShotButton: [33mtrue[39m,
+        focusVideoButton: [33mtrue[39m,
+        muteAudioButton: [33mtrue[39m,
+        videoPrivacyButton: [33mtrue[39m,
+        audioVolumeInput: [33mtrue[39m
+      },
+      consumerVideo: {
+        videoPictureInPicture: [33mtrue[39m,
+        videoMirrorButton: [33mtrue[39m,
+        fullScreenButton: [33mtrue[39m,
+        snapShotButton: [33mtrue[39m,
+        focusVideoButton: [33mtrue[39m,
+        sendMessageButton: [33mtrue[39m,
+        sendFileButton: [33mtrue[39m,
+        sendVideoButton: [33mtrue[39m,
+        muteVideoButton: [33mtrue[39m,
+        muteAudioButton: [33mtrue[39m,
+        audioVolumeInput: [33mtrue[39m,
+        geolocationButton: [33mtrue[39m,
+        banButton: [33mtrue[39m,
+        ejectButton: [33mtrue[39m
+      },
+      videoOff: {
+        sendMessageButton: [33mtrue[39m,
+        sendFileButton: [33mtrue[39m,
+        sendVideoButton: [33mtrue[39m,
+        muteAudioButton: [33mtrue[39m,
+        audioVolumeInput: [33mtrue[39m,
+        geolocationButton: [33mtrue[39m,
+        banButton: [33mtrue[39m,
+        ejectButton: [33mtrue[39m
+      },
+      chat: {
+        chatPinButton: [33mtrue[39m,
+        chatMaxButton: [33mtrue[39m,
+        chatSaveButton: [33mtrue[39m,
+        chatEmojiButton: [33mtrue[39m,
+        chatMarkdownButton: [33mtrue[39m,
+        chatSpeechStartButton: [33mtrue[39m,
+        chatGPT: [33mtrue[39m,
+        deepSeek: [33mtrue[39m
+      },
+      poll: {
+        pollPinButton: [33mtrue[39m,
+        pollMaxButton: [33mtrue[39m,
+        pollSaveButton: [33mtrue[39m
+      },
+      participantsList: {
+        saveInfoButton: [33mtrue[39m,
+        sendFileAllButton: [33mtrue[39m,
+        ejectAllButton: [33mtrue[39m,
+        sendFileButton: [33mtrue[39m,
+        geoLocationButton: [33mtrue[39m,
+        banButton: [33mtrue[39m,
+        ejectButton: [33mtrue[39m
+      },
+      whiteboard: { whiteboardLockButton: [33mtrue[39m }
+    }
+  },
+  monitoring: {
+    sentry: [33mfalse[39m,
+    stats: {
+      enabled: [33mtrue[39m,
+      src: [32m'https://stats.mirotalk.com/script.js'[39m,
+      id: [32m'41d26670-f275-45bb-af82-3ce91fe57756'[39m
+    },
+    system_info: {
+      environment: [32m'development'[39m,
+      os: { type: [32m'Linux'[39m, release: [32m'6.17.8-2-default'[39m, arch: [32m'x64'[39m },
+      cpu: { cores: [33m4[39m, model: [32m'Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz'[39m },
+      memory: { total: [32m'7.68 GB'[39m },
+      isDocker: [33mfalse[39m
+    }
+  },
+  features: { survey: [33mfalse[39m, redirect: [33mfalse[39m },
+  moderation: { room: { maxParticipants: [33m1000[39m, lobby: [33mfalse[39m } },
+  versions: {
+    app: [32m'2.0.39'[39m,
+    node: [32m'25.2.1'[39m,
+    server_version: [32m'3.19.12'[39m,
+    client_version: [32m'3.18.1'[39m
+  }
+}
+[[36m12/1/2025, 12:29:49:271[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_r9fug5cry'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+1m[39m
+[[36m12/1/2025, 12:30:02:132[39m] [[33mServer[39m] Created room { room_id: [32m'room_r9fug5cry'[39m } [35m+12s[39m
+[[36m12/1/2025, 12:30:02:139[39m] [[33mRoom[39m] Audio Level Observer enabled, starting observation... [32m''[39m [35m+1m[39m
+[[36m12/1/2025, 12:30:02:140[39m] [[33mRoom[39m] Start audioLevelObserver for signaling active speaker... [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:30:02:152[39m] [[33mServer[39m] User joined {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_info: {
+    join_data_time: [32m'2025-12-01-17:30:02'[39m,
+    join_tz_offset: [33m-300[39m,
+    peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+    peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+    peer_name: [32m'Noman-dev'[39m,
+    peer_avatar: [32m''[39m,
+    peer_token: [33mfalse[39m,
+    peer_presenter: [33mfalse[39m,
+    peer_audio: [33mtrue[39m,
+    peer_audio_volume: [33m100[39m,
+    peer_video: [33mfalse[39m,
+    peer_screen: [33mfalse[39m,
+    peer_recording: [33mfalse[39m,
+    peer_video_privacy: [33mfalse[39m,
+    peer_hand: [33mfalse[39m,
+    is_desktop_device: [33mtrue[39m,
+    is_mobile_device: [33mfalse[39m,
+    is_tablet_device: [33mfalse[39m,
+    is_ipad_pro_device: [33mfalse[39m,
+    os_name: [32m'Linux'[39m,
+    browser_name: [32m'Firefox'[39m,
+    browser_version: [32m'145.0'[39m,
+    user_agent: [32m'Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0'[39m
+  }
+} [35m+19ms[39m
+[[36m12/1/2025, 12:30:02:155[39m] [[33mServer[39m] [Join] - current active rooms [ { room: [32m'room_r9fug5cry'[39m, broadcasting: [33mfalse[39m, peers: [33m1[39m } ] [35m+1ms[39m
+[[36m12/1/2025, 12:30:02:156[39m] [[33mServer[39m] [Join] - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:30:02:156[39m] [[33mServer[39m] [Join] - Connected presenters grp by roomId {
+  room_r9fug5cry: {
+    Gh2PAYcbbJU_OjnYAAAB: {
+      peer_ip: [32m'::ffff:127.0.0.1'[39m,
+      peer_name: [32m'Noman-dev'[39m,
+      peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+      is_presenter: [33mtrue[39m
+    }
+  }
+} [35m+0ms[39m
+[[36m12/1/2025, 12:30:02:156[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:30:02:157[39m] [[33mServer[39m] [Join] - Is Peer presenter {
+  roomId: [32m'room_r9fug5cry'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_presenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:30:02:157[39m] [[33mPeer[39m] Update peer info { type: [32m'presenter'[39m, status: [33mtrue[39m } [35m+1m[39m
+[[36m12/1/2025, 12:30:02:237[39m] [[33mServer[39m] Refresh Participants count { room_id: [32m'room_r9fug5cry'[39m, peer_counts: [33m1[39m } [35m+80ms[39m
+[[36m12/1/2025, 12:30:02:259[39m] [[33mServer[39m] Request: getRouterRtpCapabilities {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+20ms[39m
+[[36m12/1/2025, 12:30:02:277[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+18ms[39m
+[[36m12/1/2025, 12:30:02:279[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+139ms[39m
+[[36m12/1/2025, 12:30:02:294[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_r9fug5cry'[39m,
+  transport_id: [32m'0a194a55-edd9-40d0-9dd4-f3b957d6e7a0'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+15ms[39m
+[[36m12/1/2025, 12:30:02:300[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+22ms[39m
+[[36m12/1/2025, 12:30:02:304[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+10ms[39m
+[[36m12/1/2025, 12:30:02:312[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_r9fug5cry'[39m,
+  transport_id: [32m'c41cbad0-eb3e-46ca-9daa-b852eadcec5b'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+7ms[39m
+[[36m12/1/2025, 12:30:02:323[39m] [[33mServer[39m] Get producers [32m'Noman-dev'[39m [35m+19ms[39m
+[[36m12/1/2025, 12:30:02:407[39m] [[33mServer[39m] Connect transport request received {
+  transport_id: [32m'0a194a55-edd9-40d0-9dd4-f3b957d6e7a0'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+84ms[39m
+[[36m12/1/2025, 12:30:02:410[39m] [[33mPeer[39m] Transport connected successfully {
+  transport_id: [32m'0a194a55-edd9-40d0-9dd4-f3b957d6e7a0'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+253ms[39m
+[[36m12/1/2025, 12:30:02:410[39m] [[33mRoom[39m] Peer transport connected successfully {
+  socket_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  transport_id: [32m'0a194a55-edd9-40d0-9dd4-f3b957d6e7a0'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+96ms[39m
+[[36m12/1/2025, 12:30:02:426[39m] [[33mRoom[39m] ICE state changed {
+  peer_name: [32m'Noman-dev'[39m,
+  transport_id: [32m'0a194a55-edd9-40d0-9dd4-f3b957d6e7a0'[39m,
+  iceState: [32m'completed'[39m
+} [35m+15ms[39m
+[[36m12/1/2025, 12:30:02:446[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  status: [33mtrue[39m
+} [35m+36ms[39m
+[[36m12/1/2025, 12:30:02:461[39m] [[33mRoom[39m] ---> new producer created [id:[32m'978036f3-60f8-4ed9-8766-8abb74e90809'[39m] [35m+29ms[39m
+[[36m12/1/2025, 12:30:02:464[39m] [[33mPeer[39m] Producer created -----> { type: [32m'simple'[39m, kind: [32m'audio'[39m } [35m+16ms[39m
+[[36m12/1/2025, 12:30:02:467[39m] [[33mRoom[39m] Producer created successfully {
+  producerTransportId: [32m'0a194a55-edd9-40d0-9dd4-f3b957d6e7a0'[39m,
+  producer_id: [32m'978036f3-60f8-4ed9-8766-8abb74e90809'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  paused: [33mfalse[39m,
+  appData: { mediaType: [32m'audioType'[39m },
+  transport_state: [32m'ICE:completed, DTLS:connected'[39m,
+  codecs: [ [32m'audio/opus'[39m ]
+} [35m+3ms[39m
+[[36m12/1/2025, 12:30:02:468[39m] [[33mServer[39m] Produce {
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  producer_id: [32m'978036f3-60f8-4ed9-8766-8abb74e90809'[39m,
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+59ms[39m
+[[36m12/1/2025, 12:30:02:472[39m] [[33mRoom[39m] Producer added to audio level observer { producer: { producerId: [32m'978036f3-60f8-4ed9-8766-8abb74e90809'[39m } } [35m+4ms[39m
+[[36m12/1/2025, 12:30:02:521[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+52ms[39m
+[[36m12/1/2025, 12:30:02:545[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+23ms[39m
+[[36m12/1/2025, 12:30:02:548[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  type: [32m'video'[39m,
+  status: [33mfalse[39m,
+  broadcast: [33mtrue[39m
+} [35m+81ms[39m
+[[36m12/1/2025, 12:30:02:548[39m] [[33mServer[39m] updatePeerInfo broadcast data [32m''[39m [35m+2ms[39m
+[[36m12/1/2025, 12:42:35:629[39m] [[33mHtmlInjector[39m] File changed: /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html [32m''[39m [35m+13m[39m
+[[36m12/1/2025, 12:42:35:747[39m] [[33mHtmlInjector[39m] Reloaded file /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html into cache [32m''[39m [35m+32ms[39m
+[[36m12/1/2025, 12:43:18:418[39m] [[33mHtmlInjector[39m] File changed: /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html [32m''[39m [35m+42s[39m
+[[36m12/1/2025, 12:43:18:486[39m] [[33mHtmlInjector[39m] Reloaded file /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html into cache [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:43:32:391[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+13m[39m
+[[36m12/1/2025, 12:43:32:396[39m] [[33mServer[39m] [Disconnect] - peer name { peer_name: [32m'Noman-dev'[39m, reason: [32m'transport close'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:32:397[39m] [[33mPeer[39m] Starting peer cleanup {
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m2[39m,
+  producers: [33m1[39m,
+  consumers: [33m0[39m
+} [35m+13m[39m
+[[36m12/1/2025, 12:43:32:401[39m] [[33mRoom[39m] ---> transport close [id:[32m'0a194a55-edd9-40d0-9dd4-f3b957d6e7a0'[39m] [35m+13m[39m
+[[36m12/1/2025, 12:43:32:404[39m] [[33mRoom[39m] ---> transport close [id:[32m'c41cbad0-eb3e-46ca-9daa-b852eadcec5b'[39m] [35m+1ms[39m
+[[36m12/1/2025, 12:43:32:405[39m] [[33mPeer[39m] Peer cleanup completed successfully {
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m0[39m,
+  producers: [33m0[39m,
+  consumers: [33m0[39m
+} [35m+8ms[39m
+[[36m12/1/2025, 12:43:32:406[39m] [[33mRoom[39m] Audio Level Observer closed [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:43:32:407[39m] [[33mRoom[39m] ---------------> Router is now closed as the last peer has left the room { room: [32m'room_r9fug5cry'[39m } [35m+1ms[39m
+[[36m12/1/2025, 12:43:32:416[39m] [[33mRoom[39m] Router closed { router_id: [32m'242a2323-a86d-4915-a39d-2594d276ef82'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:32:418[39m] [[33mRoom[39m] Room closed { room_id: [32m'room_r9fug5cry'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:32:420[39m] [[33mServer[39m] Peer removed from the room {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_id: [32m'Gh2PAYcbbJU_OjnYAAAB'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_counts: [33m0[39m,
+  isPresenter: [33mtrue[39m
+} [35m+22ms[39m
+[[36m12/1/2025, 12:43:32:422[39m] [[33mServer[39m] [Disconnect] - Last peer - current presenters grouped by roomId {} [35m+0ms[39m
+[[36m12/1/2025, 12:43:32:423[39m] [[33mServer[39m] [Disconnect] - Last peer - current active rooms [] [35m+0ms[39m
+[[36m12/1/2025, 12:43:32:423[39m] [[33mServer[39m] [Disconnect] - Last peer - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:32:438[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_r9fug5cry'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+15ms[39m
+[[36m12/1/2025, 12:43:38:294[39m] [[33mServer[39m] Created room { room_id: [32m'room_r9fug5cry'[39m } [35m+5s[39m
+[[36m12/1/2025, 12:43:38:297[39m] [[33mRoom[39m] Audio Level Observer enabled, starting observation... [32m''[39m [35m+5s[39m
+[[36m12/1/2025, 12:43:38:297[39m] [[33mRoom[39m] Start audioLevelObserver for signaling active speaker... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:303[39m] [[33mServer[39m] User joined {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_info: {
+    join_data_time: [32m'2025-12-01-17:43:38'[39m,
+    join_tz_offset: [33m-300[39m,
+    peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+    peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+    peer_name: [32m'Noman-dev'[39m,
+    peer_avatar: [32m''[39m,
+    peer_token: [33mfalse[39m,
+    peer_presenter: [33mfalse[39m,
+    peer_audio: [33mtrue[39m,
+    peer_audio_volume: [33m100[39m,
+    peer_video: [33mfalse[39m,
+    peer_screen: [33mfalse[39m,
+    peer_recording: [33mfalse[39m,
+    peer_video_privacy: [33mfalse[39m,
+    peer_hand: [33mfalse[39m,
+    is_desktop_device: [33mtrue[39m,
+    is_mobile_device: [33mfalse[39m,
+    is_tablet_device: [33mfalse[39m,
+    is_ipad_pro_device: [33mfalse[39m,
+    os_name: [32m'Linux'[39m,
+    browser_name: [32m'Firefox'[39m,
+    browser_version: [32m'145.0'[39m,
+    user_agent: [32m'Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0'[39m
+  }
+} [35m+9ms[39m
+[[36m12/1/2025, 12:43:38:304[39m] [[33mServer[39m] [Join] - current active rooms [ { room: [32m'room_r9fug5cry'[39m, broadcasting: [33mfalse[39m, peers: [33m1[39m } ] [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:305[39m] [[33mServer[39m] [Join] - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:305[39m] [[33mServer[39m] [Join] - Connected presenters grp by roomId {
+  room_r9fug5cry: {
+    K0NmJ1m3tVzJqhTmAAAD: {
+      peer_ip: [32m'::ffff:127.0.0.1'[39m,
+      peer_name: [32m'Noman-dev'[39m,
+      peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+      is_presenter: [33mtrue[39m
+    }
+  }
+} [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:305[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:306[39m] [[33mServer[39m] [Join] - Is Peer presenter {
+  roomId: [32m'room_r9fug5cry'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_presenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:306[39m] [[33mPeer[39m] Update peer info { type: [32m'presenter'[39m, status: [33mtrue[39m } [35m+5s[39m
+[[36m12/1/2025, 12:43:38:309[39m] [[33mServer[39m] Refresh Participants count { room_id: [32m'room_r9fug5cry'[39m, peer_counts: [33m1[39m } [35m+3ms[39m
+[[36m12/1/2025, 12:43:38:337[39m] [[33mServer[39m] Request: getRouterRtpCapabilities {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+28ms[39m
+[[36m12/1/2025, 12:43:38:359[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+22ms[39m
+[[36m12/1/2025, 12:43:38:359[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+62ms[39m
+[[36m12/1/2025, 12:43:38:366[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_r9fug5cry'[39m,
+  transport_id: [32m'01ebb6f6-21ad-4bba-8025-640324697969'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+5ms[39m
+[[36m12/1/2025, 12:43:38:371[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+12ms[39m
+[[36m12/1/2025, 12:43:38:372[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+6ms[39m
+[[36m12/1/2025, 12:43:38:373[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_r9fug5cry'[39m,
+  transport_id: [32m'dd53ab36-593a-4ad6-8d8b-8ffe320304ce'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+1ms[39m
+[[36m12/1/2025, 12:43:38:385[39m] [[33mServer[39m] Get producers [32m'Noman-dev'[39m [35m+13ms[39m
+[[36m12/1/2025, 12:43:38:505[39m] [[33mServer[39m] Connect transport request received {
+  transport_id: [32m'01ebb6f6-21ad-4bba-8025-640324697969'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+119ms[39m
+[[36m12/1/2025, 12:43:38:506[39m] [[33mPeer[39m] Transport connected successfully {
+  transport_id: [32m'01ebb6f6-21ad-4bba-8025-640324697969'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+200ms[39m
+[[36m12/1/2025, 12:43:38:507[39m] [[33mRoom[39m] Peer transport connected successfully {
+  socket_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  transport_id: [32m'01ebb6f6-21ad-4bba-8025-640324697969'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+133ms[39m
+[[36m12/1/2025, 12:43:38:519[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  status: [33mtrue[39m
+} [35m+12ms[39m
+[[36m12/1/2025, 12:43:38:521[39m] [[33mRoom[39m] ---> new producer created [id:[32m'623238f7-7ef8-4130-a83d-a790c08ed50c'[39m] [35m+14ms[39m
+[[36m12/1/2025, 12:43:38:522[39m] [[33mPeer[39m] Producer created -----> { type: [32m'simple'[39m, kind: [32m'audio'[39m } [35m+2ms[39m
+[[36m12/1/2025, 12:43:38:522[39m] [[33mRoom[39m] Producer created successfully {
+  producerTransportId: [32m'01ebb6f6-21ad-4bba-8025-640324697969'[39m,
+  producer_id: [32m'623238f7-7ef8-4130-a83d-a790c08ed50c'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  paused: [33mfalse[39m,
+  appData: { mediaType: [32m'audioType'[39m },
+  transport_state: [32m'ICE:new, DTLS:new'[39m,
+  codecs: [ [32m'audio/opus'[39m ]
+} [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:522[39m] [[33mServer[39m] Produce {
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  producer_id: [32m'623238f7-7ef8-4130-a83d-a790c08ed50c'[39m,
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+16ms[39m
+[[36m12/1/2025, 12:43:38:523[39m] [[33mRoom[39m] Producer added to audio level observer { producer: { producerId: [32m'623238f7-7ef8-4130-a83d-a790c08ed50c'[39m } } [35m+1ms[39m
+[[36m12/1/2025, 12:43:38:523[39m] [[33mRoom[39m] ICE state changed {
+  peer_name: [32m'Noman-dev'[39m,
+  transport_id: [32m'01ebb6f6-21ad-4bba-8025-640324697969'[39m,
+  iceState: [32m'completed'[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:43:38:541[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+19ms[39m
+[[36m12/1/2025, 12:43:38:555[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+14ms[39m
+[[36m12/1/2025, 12:43:38:557[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  type: [32m'video'[39m,
+  status: [33mfalse[39m,
+  broadcast: [33mtrue[39m
+} [35m+35ms[39m
+[[36m12/1/2025, 12:43:38:557[39m] [[33mServer[39m] updatePeerInfo broadcast data [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:43:58:430[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+19s[39m
+[[36m12/1/2025, 12:43:58:431[39m] [[33mServer[39m] [Disconnect] - peer name { peer_name: [32m'Noman-dev'[39m, reason: [32m'transport close'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:58:431[39m] [[33mPeer[39m] Starting peer cleanup {
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m2[39m,
+  producers: [33m1[39m,
+  consumers: [33m0[39m
+} [35m+19s[39m
+[[36m12/1/2025, 12:43:58:431[39m] [[33mRoom[39m] ---> transport close [id:[32m'01ebb6f6-21ad-4bba-8025-640324697969'[39m] [35m+19s[39m
+[[36m12/1/2025, 12:43:58:432[39m] [[33mRoom[39m] ---> transport close [id:[32m'dd53ab36-593a-4ad6-8d8b-8ffe320304ce'[39m] [35m+1ms[39m
+[[36m12/1/2025, 12:43:58:432[39m] [[33mPeer[39m] Peer cleanup completed successfully {
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m0[39m,
+  producers: [33m0[39m,
+  consumers: [33m0[39m
+} [35m+1ms[39m
+[[36m12/1/2025, 12:43:58:432[39m] [[33mRoom[39m] Audio Level Observer closed [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:43:58:432[39m] [[33mRoom[39m] ---------------> Router is now closed as the last peer has left the room { room: [32m'room_r9fug5cry'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:58:433[39m] [[33mRoom[39m] Router closed { router_id: [32m'13b0d79e-920d-45b2-ae66-996731ee2e9f'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:58:433[39m] [[33mRoom[39m] Room closed { room_id: [32m'room_r9fug5cry'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:43:58:433[39m] [[33mServer[39m] Peer removed from the room {
+  room_id: [32m'room_r9fug5cry'[39m,
+  peer_id: [32m'K0NmJ1m3tVzJqhTmAAAD'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_counts: [33m0[39m,
+  isPresenter: [33mtrue[39m
+} [35m+2ms[39m
+[[36m12/1/2025, 12:43:58:433[39m] [[33mServer[39m] [Disconnect] - Last peer - current presenters grouped by roomId {} [35m+0ms[39m
+[[36m12/1/2025, 12:43:58:434[39m] [[33mServer[39m] [Disconnect] - Last peer - current active rooms [] [35m+0ms[39m
+[[36m12/1/2025, 12:43:58:434[39m] [[33mServer[39m] [Disconnect] - Last peer - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:44:13:314[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_7u3ff3h38'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+14s[39m
+[[36m12/1/2025, 12:44:15:746[39m] [[33mServer[39m] Created room { room_id: [32m'room_7u3ff3h38'[39m } [35m+2s[39m
+[[36m12/1/2025, 12:44:15:748[39m] [[33mRoom[39m] Audio Level Observer enabled, starting observation... [32m''[39m [35m+17s[39m
+[[36m12/1/2025, 12:44:15:749[39m] [[33mRoom[39m] Start audioLevelObserver for signaling active speaker... [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:44:15:755[39m] [[33mServer[39m] User joined {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  peer_info: {
+    join_data_time: [32m'2025-12-01-17:44:15'[39m,
+    join_tz_offset: [33m-300[39m,
+    peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+    peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+    peer_name: [32m'Noman-dev'[39m,
+    peer_avatar: [32m''[39m,
+    peer_token: [33mfalse[39m,
+    peer_presenter: [33mfalse[39m,
+    peer_audio: [33mtrue[39m,
+    peer_audio_volume: [33m100[39m,
+    peer_video: [33mfalse[39m,
+    peer_screen: [33mfalse[39m,
+    peer_recording: [33mfalse[39m,
+    peer_video_privacy: [33mfalse[39m,
+    peer_hand: [33mfalse[39m,
+    is_desktop_device: [33mtrue[39m,
+    is_mobile_device: [33mfalse[39m,
+    is_tablet_device: [33mfalse[39m,
+    is_ipad_pro_device: [33mfalse[39m,
+    os_name: [32m'Linux'[39m,
+    browser_name: [32m'Firefox'[39m,
+    browser_version: [32m'145.0'[39m,
+    user_agent: [32m'Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0'[39m
+  }
+} [35m+9ms[39m
+[[36m12/1/2025, 12:44:15:755[39m] [[33mServer[39m] [Join] - current active rooms [ { room: [32m'room_7u3ff3h38'[39m, broadcasting: [33mfalse[39m, peers: [33m1[39m } ] [35m+0ms[39m
+[[36m12/1/2025, 12:44:15:757[39m] [[33mServer[39m] [Join] - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:44:15:757[39m] [[33mServer[39m] [Join] - Connected presenters grp by roomId {
+  room_7u3ff3h38: {
+    NyR4Urt14dcYWqhKAAAF: {
+      peer_ip: [32m'::ffff:127.0.0.1'[39m,
+      peer_name: [32m'Noman-dev'[39m,
+      peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+      is_presenter: [33mtrue[39m
+    }
+  }
+} [35m+0ms[39m
+[[36m12/1/2025, 12:44:15:757[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:44:15:757[39m] [[33mServer[39m] [Join] - Is Peer presenter {
+  roomId: [32m'room_7u3ff3h38'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_presenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:44:15:758[39m] [[33mPeer[39m] Update peer info { type: [32m'presenter'[39m, status: [33mtrue[39m } [35m+17s[39m
+[[36m12/1/2025, 12:44:15:767[39m] [[33mServer[39m] Refresh Participants count { room_id: [32m'room_7u3ff3h38'[39m, peer_counts: [33m1[39m } [35m+8ms[39m
+[[36m12/1/2025, 12:44:15:780[39m] [[33mServer[39m] Request: getRouterRtpCapabilities {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+12ms[39m
+[[36m12/1/2025, 12:44:15:809[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+29ms[39m
+[[36m12/1/2025, 12:44:15:812[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+63ms[39m
+[[36m12/1/2025, 12:44:15:818[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  transport_id: [32m'64309baa-c733-46ef-bc8d-8e9c5e9ef63f'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+4ms[39m
+[[36m12/1/2025, 12:44:15:823[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+11ms[39m
+[[36m12/1/2025, 12:44:15:824[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+6ms[39m
+[[36m12/1/2025, 12:44:15:832[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  transport_id: [32m'5b037f50-a23b-4335-b4ab-841de252fc08'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+7ms[39m
+[[36m12/1/2025, 12:44:15:837[39m] [[33mServer[39m] Get producers [32m'Noman-dev'[39m [35m+13ms[39m
+[[36m12/1/2025, 12:44:15:945[39m] [[33mServer[39m] Connect transport request received {
+  transport_id: [32m'64309baa-c733-46ef-bc8d-8e9c5e9ef63f'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+107ms[39m
+[[36m12/1/2025, 12:44:15:946[39m] [[33mPeer[39m] Transport connected successfully {
+  transport_id: [32m'64309baa-c733-46ef-bc8d-8e9c5e9ef63f'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+188ms[39m
+[[36m12/1/2025, 12:44:15:946[39m] [[33mRoom[39m] Peer transport connected successfully {
+  socket_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  transport_id: [32m'64309baa-c733-46ef-bc8d-8e9c5e9ef63f'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+113ms[39m
+[[36m12/1/2025, 12:44:15:954[39m] [[33mRoom[39m] ICE state changed {
+  peer_name: [32m'Noman-dev'[39m,
+  transport_id: [32m'64309baa-c733-46ef-bc8d-8e9c5e9ef63f'[39m,
+  iceState: [32m'completed'[39m
+} [35m+7ms[39m
+[[36m12/1/2025, 12:44:15:956[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  status: [33mtrue[39m
+} [35m+10ms[39m
+[[36m12/1/2025, 12:44:15:958[39m] [[33mRoom[39m] ---> new producer created [id:[32m'9a7420fe-000a-4c30-80d3-c293585c8dbe'[39m] [35m+3ms[39m
+[[36m12/1/2025, 12:44:15:958[39m] [[33mPeer[39m] Producer created -----> { type: [32m'simple'[39m, kind: [32m'audio'[39m } [35m+1ms[39m
+[[36m12/1/2025, 12:44:15:958[39m] [[33mRoom[39m] Producer created successfully {
+  producerTransportId: [32m'64309baa-c733-46ef-bc8d-8e9c5e9ef63f'[39m,
+  producer_id: [32m'9a7420fe-000a-4c30-80d3-c293585c8dbe'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  paused: [33mfalse[39m,
+  appData: { mediaType: [32m'audioType'[39m },
+  transport_state: [32m'ICE:completed, DTLS:connected'[39m,
+  codecs: [ [32m'audio/opus'[39m ]
+} [35m+0ms[39m
+[[36m12/1/2025, 12:44:15:959[39m] [[33mServer[39m] Produce {
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  producer_id: [32m'9a7420fe-000a-4c30-80d3-c293585c8dbe'[39m,
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+13ms[39m
+[[36m12/1/2025, 12:44:15:959[39m] [[33mRoom[39m] Producer added to audio level observer { producer: { producerId: [32m'9a7420fe-000a-4c30-80d3-c293585c8dbe'[39m } } [35m+0ms[39m
+[[36m12/1/2025, 12:44:15:974[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+15ms[39m
+[[36m12/1/2025, 12:44:15:986[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+11ms[39m
+[[36m12/1/2025, 12:44:15:987[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  type: [32m'video'[39m,
+  status: [33mfalse[39m,
+  broadcast: [33mtrue[39m
+} [35m+29ms[39m
+[[36m12/1/2025, 12:44:15:988[39m] [[33mServer[39m] updatePeerInfo broadcast data [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:45:11:033[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+55s[39m
+[[36m12/1/2025, 12:45:11:034[39m] [[33mServer[39m] [Disconnect] - peer name { peer_name: [32m'Noman-dev'[39m, reason: [32m'transport close'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:11:035[39m] [[33mPeer[39m] Starting peer cleanup {
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m2[39m,
+  producers: [33m1[39m,
+  consumers: [33m0[39m
+} [35m+55s[39m
+[[36m12/1/2025, 12:45:11:036[39m] [[33mRoom[39m] ---> transport close [id:[32m'64309baa-c733-46ef-bc8d-8e9c5e9ef63f'[39m] [35m+55s[39m
+[[36m12/1/2025, 12:45:11:037[39m] [[33mRoom[39m] ---> transport close [id:[32m'5b037f50-a23b-4335-b4ab-841de252fc08'[39m] [35m+1ms[39m
+[[36m12/1/2025, 12:45:11:038[39m] [[33mPeer[39m] Peer cleanup completed successfully {
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m0[39m,
+  producers: [33m0[39m,
+  consumers: [33m0[39m
+} [35m+2ms[39m
+[[36m12/1/2025, 12:45:11:039[39m] [[33mRoom[39m] Audio Level Observer closed [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:45:11:040[39m] [[33mRoom[39m] ---------------> Router is now closed as the last peer has left the room { room: [32m'room_7u3ff3h38'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:11:040[39m] [[33mRoom[39m] Router closed { router_id: [32m'97b010b0-fcc6-4bde-a42e-9cbe11c672a3'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:11:040[39m] [[33mRoom[39m] Room closed { room_id: [32m'room_7u3ff3h38'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:11:040[39m] [[33mServer[39m] Peer removed from the room {
+  room_id: [32m'room_7u3ff3h38'[39m,
+  peer_id: [32m'NyR4Urt14dcYWqhKAAAF'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_counts: [33m0[39m,
+  isPresenter: [33mtrue[39m
+} [35m+5ms[39m
+[[36m12/1/2025, 12:45:11:041[39m] [[33mServer[39m] [Disconnect] - Last peer - current presenters grouped by roomId {} [35m+0ms[39m
+[[36m12/1/2025, 12:45:11:041[39m] [[33mServer[39m] [Disconnect] - Last peer - current active rooms [] [35m+0ms[39m
+[[36m12/1/2025, 12:45:11:042[39m] [[33mServer[39m] [Disconnect] - Last peer - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:17:384[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_hvofyiwtp'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+6s[39m
+[[36m12/1/2025, 12:45:37:374[39m] [[33mServer[39m] Created room { room_id: [32m'room_hvofyiwtp'[39m } [35m+19s[39m
+[[36m12/1/2025, 12:45:37:377[39m] [[33mRoom[39m] Audio Level Observer enabled, starting observation... [32m''[39m [35m+26s[39m
+[[36m12/1/2025, 12:45:37:379[39m] [[33mRoom[39m] Start audioLevelObserver for signaling active speaker... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:45:37:389[39m] [[33mServer[39m] User joined {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_info: {
+    join_data_time: [32m'2025-12-01-17:45:37'[39m,
+    join_tz_offset: [33m-300[39m,
+    peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+    peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+    peer_name: [32m'Noman-dev'[39m,
+    peer_avatar: [32m''[39m,
+    peer_token: [33mfalse[39m,
+    peer_presenter: [33mfalse[39m,
+    peer_audio: [33mtrue[39m,
+    peer_audio_volume: [33m100[39m,
+    peer_video: [33mfalse[39m,
+    peer_screen: [33mfalse[39m,
+    peer_recording: [33mfalse[39m,
+    peer_video_privacy: [33mfalse[39m,
+    peer_hand: [33mfalse[39m,
+    is_desktop_device: [33mtrue[39m,
+    is_mobile_device: [33mfalse[39m,
+    is_tablet_device: [33mfalse[39m,
+    is_ipad_pro_device: [33mfalse[39m,
+    os_name: [32m'Linux'[39m,
+    browser_name: [32m'Firefox'[39m,
+    browser_version: [32m'145.0'[39m,
+    user_agent: [32m'Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0'[39m
+  }
+} [35m+15ms[39m
+[[36m12/1/2025, 12:45:37:390[39m] [[33mServer[39m] [Join] - current active rooms [ { room: [32m'room_hvofyiwtp'[39m, broadcasting: [33mfalse[39m, peers: [33m1[39m } ] [35m+0ms[39m
+[[36m12/1/2025, 12:45:37:392[39m] [[33mServer[39m] [Join] - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:37:392[39m] [[33mServer[39m] [Join] - Connected presenters grp by roomId {
+  room_hvofyiwtp: {
+    [32m'vX9D-v_rjaOBSG6fAAAH'[39m: {
+      peer_ip: [32m'::ffff:127.0.0.1'[39m,
+      peer_name: [32m'Noman-dev'[39m,
+      peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+      is_presenter: [33mtrue[39m
+    }
+  }
+} [35m+0ms[39m
+[[36m12/1/2025, 12:45:37:393[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:45:37:393[39m] [[33mServer[39m] [Join] - Is Peer presenter {
+  roomId: [32m'room_hvofyiwtp'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_presenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:45:37:393[39m] [[33mPeer[39m] Update peer info { type: [32m'presenter'[39m, status: [33mtrue[39m } [35m+26s[39m
+[[36m12/1/2025, 12:45:37:403[39m] [[33mServer[39m] Refresh Participants count { room_id: [32m'room_hvofyiwtp'[39m, peer_counts: [33m1[39m } [35m+10ms[39m
+[[36m12/1/2025, 12:45:37:420[39m] [[33mServer[39m] Request: getRouterRtpCapabilities {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+16ms[39m
+[[36m12/1/2025, 12:45:37:454[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+33ms[39m
+[[36m12/1/2025, 12:45:37:456[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+76ms[39m
+[[36m12/1/2025, 12:45:37:459[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  transport_id: [32m'a0de831e-be2a-4e26-8bfc-6b8f47054d7c'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+2ms[39m
+[[36m12/1/2025, 12:45:37:488[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+32ms[39m
+[[36m12/1/2025, 12:45:37:493[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+32ms[39m
+[[36m12/1/2025, 12:45:37:503[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  transport_id: [32m'f0b1a7d8-bbc8-4451-82e8-edf73aa68062'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+3ms[39m
+[[36m12/1/2025, 12:45:37:508[39m] [[33mServer[39m] Get producers [32m'Noman-dev'[39m [35m+15ms[39m
+[[36m12/1/2025, 12:45:37:625[39m] [[33mServer[39m] Connect transport request received {
+  transport_id: [32m'a0de831e-be2a-4e26-8bfc-6b8f47054d7c'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+116ms[39m
+[[36m12/1/2025, 12:45:37:630[39m] [[33mPeer[39m] Transport connected successfully {
+  transport_id: [32m'a0de831e-be2a-4e26-8bfc-6b8f47054d7c'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+234ms[39m
+[[36m12/1/2025, 12:45:37:631[39m] [[33mRoom[39m] Peer transport connected successfully {
+  socket_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  transport_id: [32m'a0de831e-be2a-4e26-8bfc-6b8f47054d7c'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+127ms[39m
+[[36m12/1/2025, 12:45:37:645[39m] [[33mRoom[39m] ICE state changed {
+  peer_name: [32m'Noman-dev'[39m,
+  transport_id: [32m'a0de831e-be2a-4e26-8bfc-6b8f47054d7c'[39m,
+  iceState: [32m'completed'[39m
+} [35m+10ms[39m
+[[36m12/1/2025, 12:45:37:649[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  status: [33mtrue[39m
+} [35m+18ms[39m
+[[36m12/1/2025, 12:45:37:653[39m] [[33mRoom[39m] ---> new producer created [id:[32m'9bfb5745-23d3-46f9-99cd-26549bc029ad'[39m] [35m+6ms[39m
+[[36m12/1/2025, 12:45:37:664[39m] [[33mPeer[39m] Producer created -----> { type: [32m'simple'[39m, kind: [32m'audio'[39m } [35m+12ms[39m
+[[36m12/1/2025, 12:45:37:665[39m] [[33mRoom[39m] Producer created successfully {
+  producerTransportId: [32m'a0de831e-be2a-4e26-8bfc-6b8f47054d7c'[39m,
+  producer_id: [32m'9bfb5745-23d3-46f9-99cd-26549bc029ad'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  paused: [33mfalse[39m,
+  appData: { mediaType: [32m'audioType'[39m },
+  transport_state: [32m'ICE:completed, DTLS:connected'[39m,
+  codecs: [ [32m'audio/opus'[39m ]
+} [35m+1ms[39m
+[[36m12/1/2025, 12:45:37:665[39m] [[33mServer[39m] Produce {
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  producer_id: [32m'9bfb5745-23d3-46f9-99cd-26549bc029ad'[39m,
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+37ms[39m
+[[36m12/1/2025, 12:45:37:668[39m] [[33mRoom[39m] Producer added to audio level observer { producer: { producerId: [32m'9bfb5745-23d3-46f9-99cd-26549bc029ad'[39m } } [35m+3ms[39m
+[[36m12/1/2025, 12:45:37:695[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+30ms[39m
+[[36m12/1/2025, 12:45:37:712[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+16ms[39m
+[[36m12/1/2025, 12:45:37:715[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  type: [32m'video'[39m,
+  status: [33mfalse[39m,
+  broadcast: [33mtrue[39m
+} [35m+50ms[39m
+[[36m12/1/2025, 12:45:37:715[39m] [[33mServer[39m] updatePeerInfo broadcast data [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:45:52:162[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+14s[39m
+[[36m12/1/2025, 12:45:52:162[39m] [[33mServer[39m] [Disconnect] - peer name { peer_name: [32m'Noman-dev'[39m, reason: [32m'transport close'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:163[39m] [[33mPeer[39m] Starting peer cleanup {
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m2[39m,
+  producers: [33m1[39m,
+  consumers: [33m0[39m
+} [35m+14s[39m
+[[36m12/1/2025, 12:45:52:169[39m] [[33mRoom[39m] ---> transport close [id:[32m'a0de831e-be2a-4e26-8bfc-6b8f47054d7c'[39m] [35m+14s[39m
+[[36m12/1/2025, 12:45:52:169[39m] [[33mRoom[39m] ---> transport close [id:[32m'f0b1a7d8-bbc8-4451-82e8-edf73aa68062'[39m] [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:170[39m] [[33mPeer[39m] Peer cleanup completed successfully {
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m0[39m,
+  producers: [33m0[39m,
+  consumers: [33m0[39m
+} [35m+7ms[39m
+[[36m12/1/2025, 12:45:52:170[39m] [[33mRoom[39m] Audio Level Observer closed [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:170[39m] [[33mRoom[39m] ---------------> Router is now closed as the last peer has left the room { room: [32m'room_hvofyiwtp'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:171[39m] [[33mRoom[39m] Router closed { router_id: [32m'28910270-e829-4fe0-aa15-0884f88e4129'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:172[39m] [[33mRoom[39m] Room closed { room_id: [32m'room_hvofyiwtp'[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:172[39m] [[33mServer[39m] Peer removed from the room {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'vX9D-v_rjaOBSG6fAAAH'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_counts: [33m0[39m,
+  isPresenter: [33mtrue[39m
+} [35m+9ms[39m
+[[36m12/1/2025, 12:45:52:173[39m] [[33mServer[39m] [Disconnect] - Last peer - current presenters grouped by roomId {} [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:173[39m] [[33mServer[39m] [Disconnect] - Last peer - current active rooms [] [35m+0ms[39m
+[[36m12/1/2025, 12:45:52:174[39m] [[33mServer[39m] [Disconnect] - Last peer - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:46:07:428[39m] [[33mHtmlInjector[39m] File changed: /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html [32m''[39m [35m+2m[39m
+[[36m12/1/2025, 12:46:07:429[39m] [[33mHtmlInjector[39m] Reloaded file /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html into cache [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:46:08:633[39m] [[33mHtmlInjector[39m] File changed: /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html [32m''[39m [35m+1s[39m
+[[36m12/1/2025, 12:46:08:634[39m] [[33mHtmlInjector[39m] Reloaded file /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html into cache [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:47:01:134[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_hvofyiwtp'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+1m[39m
+[[36m12/1/2025, 12:47:05:129[39m] [[33mServer[39m] Created room { room_id: [32m'room_hvofyiwtp'[39m } [35m+3s[39m
+[[36m12/1/2025, 12:47:05:131[39m] [[33mRoom[39m] Audio Level Observer enabled, starting observation... [32m''[39m [35m+1m[39m
+[[36m12/1/2025, 12:47:05:131[39m] [[33mRoom[39m] Start audioLevelObserver for signaling active speaker... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:140[39m] [[33mServer[39m] User joined {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_info: {
+    join_data_time: [32m'2025-12-01-17:47:05'[39m,
+    join_tz_offset: [33m-300[39m,
+    peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+    peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+    peer_name: [32m'Noman-dev'[39m,
+    peer_avatar: [32m''[39m,
+    peer_token: [33mfalse[39m,
+    peer_presenter: [33mfalse[39m,
+    peer_audio: [33mtrue[39m,
+    peer_audio_volume: [33m100[39m,
+    peer_video: [33mfalse[39m,
+    peer_screen: [33mfalse[39m,
+    peer_recording: [33mfalse[39m,
+    peer_video_privacy: [33mfalse[39m,
+    peer_hand: [33mfalse[39m,
+    is_desktop_device: [33mtrue[39m,
+    is_mobile_device: [33mfalse[39m,
+    is_tablet_device: [33mfalse[39m,
+    is_ipad_pro_device: [33mfalse[39m,
+    os_name: [32m'Linux'[39m,
+    browser_name: [32m'Firefox'[39m,
+    browser_version: [32m'145.0'[39m,
+    user_agent: [32m'Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0'[39m
+  }
+} [35m+10ms[39m
+[[36m12/1/2025, 12:47:05:141[39m] [[33mServer[39m] [Join] - current active rooms [ { room: [32m'room_hvofyiwtp'[39m, broadcasting: [33mfalse[39m, peers: [33m1[39m } ] [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:142[39m] [[33mServer[39m] [Join] - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:143[39m] [[33mServer[39m] [Join] - Connected presenters grp by roomId {
+  room_hvofyiwtp: {
+    i_Lj67SBDYMk0BU1AAAJ: {
+      peer_ip: [32m'::ffff:127.0.0.1'[39m,
+      peer_name: [32m'Noman-dev'[39m,
+      peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+      is_presenter: [33mtrue[39m
+    }
+  }
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:146[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:147[39m] [[33mServer[39m] [Join] - Is Peer presenter {
+  roomId: [32m'room_hvofyiwtp'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_presenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:148[39m] [[33mPeer[39m] Update peer info { type: [32m'presenter'[39m, status: [33mtrue[39m } [35m+1m[39m
+[[36m12/1/2025, 12:47:05:357[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+209ms[39m
+[[36m12/1/2025, 12:47:05:361[39m] [[33mServer[39m] Room action: {
+  room_broadcasting: [33mfalse[39m,
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  action: [32m'broadcasting'[39m,
+  password: [1mnull[22m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:362[39m] [[33mServer[39m] Room status {
+  broadcasting: [33mfalse[39m,
+  locked: [33mfalse[39m,
+  lobby: [33mfalse[39m,
+  hostOnlyRecording: [33mfalse[39m
+} [35m+1ms[39m
+[[36m12/1/2025, 12:47:05:392[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+30ms[39m
+[[36m12/1/2025, 12:47:05:393[39m] [[33mServer[39m] Room action: {
+  room_broadcasting: [33mfalse[39m,
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  action: [32m'lobbyOff'[39m,
+  password: [1mnull[22m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:394[39m] [[33mServer[39m] Room status {
+  broadcasting: [33mfalse[39m,
+  locked: [33mfalse[39m,
+  lobby: [33mfalse[39m,
+  hostOnlyRecording: [33mfalse[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:396[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:397[39m] [[33mServer[39m] Room action: {
+  room_broadcasting: [33mfalse[39m,
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  action: [32m'hostOnlyRecordingOff'[39m,
+  password: [1mnull[22m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:398[39m] [[33mServer[39m] Room status {
+  broadcasting: [33mfalse[39m,
+  locked: [33mfalse[39m,
+  lobby: [33mfalse[39m,
+  hostOnlyRecording: [33mfalse[39m
+} [35m+0ms[39m
+[[36m12/1/2025, 12:47:05:400[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+1ms[39m
+[[36m12/1/2025, 12:47:05:401[39m] [[33mRoom[39m] Update room moderator all data {
+  video_start_privacy: [33mfalse[39m,
+  audio_start_muted: [33mfalse[39m,
+  video_start_hidden: [33mfalse[39m,
+  audio_cant_unmute: [33mfalse[39m,
+  video_cant_unhide: [33mfalse[39m,
+  screen_cant_share: [33mfalse[39m,
+  chat_cant_privately: [33mfalse[39m,
+  chat_cant_chatgpt: [33mfalse[39m,
+  chat_cant_deep_seek: [33mfalse[39m,
+  media_cant_sharing: [33mfalse[39m
+} [35m+269ms[39m
+[[36m12/1/2025, 12:47:05:406[39m] [[33mServer[39m] Refresh Participants count { room_id: [32m'room_hvofyiwtp'[39m, peer_counts: [33m1[39m } [35m+5ms[39m
+[[36m12/1/2025, 12:47:05:412[39m] [[33mServer[39m] Request: getRouterRtpCapabilities {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+5ms[39m
+[[36m12/1/2025, 12:47:05:468[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+56ms[39m
+[[36m12/1/2025, 12:47:05:474[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+73ms[39m
+[[36m12/1/2025, 12:47:05:481[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  transport_id: [32m'7aaf6ea9-ef30-499d-90ce-debe6d293176'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+7ms[39m
+[[36m12/1/2025, 12:47:05:495[39m] [[33mServer[39m] Create WebRTC transport request received {
+  peer_name: [32m'Noman-dev'[39m,
+  isDesktop: [33mtrue[39m,
+  os: [32m'Linux'[39m,
+  browser: [32m'Firefox 145.0'[39m
+} [35m+20ms[39m
+[[36m12/1/2025, 12:47:05:495[39m] [[33mRoom[39m] webRtcTransportOptions -----> {
+  listenInfos: [
+    {
+      protocol: [32m'udp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    },
+    {
+      protocol: [32m'tcp'[39m,
+      ip: [32m'0.0.0.0'[39m,
+      announcedAddress: [32m'192.168.2.103'[39m,
+      portRange: { min: [33m40000[39m, max: [33m40100[39m }
+    }
+  ],
+  enableUdp: [33mtrue[39m,
+  enableTcp: [33mtrue[39m,
+  preferUdp: [33mtrue[39m,
+  iceConsentTimeout: [33m35[39m,
+  initialAvailableOutgoingBitrate: [33m2500000[39m
+} [35m+6ms[39m
+[[36m12/1/2025, 12:47:05:510[39m] [[33mRoom[39m] Transport created {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  transport_id: [32m'eaea6089-c2a8-4af6-b5c7-a03c2658fb88'[39m,
+  type: [32m'webrtc'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+14ms[39m
+[[36m12/1/2025, 12:47:05:519[39m] [[33mServer[39m] Get producers [32m'Noman-dev'[39m [35m+24ms[39m
+[[36m12/1/2025, 12:47:05:742[39m] [[33mServer[39m] Connect transport request received {
+  transport_id: [32m'7aaf6ea9-ef30-499d-90ce-debe6d293176'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+222ms[39m
+[[36m12/1/2025, 12:47:05:743[39m] [[33mPeer[39m] Transport connected successfully {
+  transport_id: [32m'7aaf6ea9-ef30-499d-90ce-debe6d293176'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+594ms[39m
+[[36m12/1/2025, 12:47:05:747[39m] [[33mRoom[39m] Peer transport connected successfully {
+  socket_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  transport_id: [32m'7aaf6ea9-ef30-499d-90ce-debe6d293176'[39m,
+  peer_name: [32m'Noman-dev'[39m
+} [35m+236ms[39m
+[[36m12/1/2025, 12:47:05:793[39m] [[33mRoom[39m] ICE state changed {
+  peer_name: [32m'Noman-dev'[39m,
+  transport_id: [32m'7aaf6ea9-ef30-499d-90ce-debe6d293176'[39m,
+  iceState: [32m'completed'[39m
+} [35m+45ms[39m
+[[36m12/1/2025, 12:47:05:797[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  status: [33mtrue[39m
+} [35m+50ms[39m
+[[36m12/1/2025, 12:47:05:801[39m] [[33mRoom[39m] ---> new producer created [id:[32m'14e39506-7dbf-450f-b05d-224c1e9bf6c2'[39m] [35m+5ms[39m
+[[36m12/1/2025, 12:47:05:801[39m] [[33mPeer[39m] Producer created -----> { type: [32m'simple'[39m, kind: [32m'audio'[39m } [35m+3ms[39m
+[[36m12/1/2025, 12:47:05:802[39m] [[33mRoom[39m] Producer created successfully {
+  producerTransportId: [32m'7aaf6ea9-ef30-499d-90ce-debe6d293176'[39m,
+  producer_id: [32m'14e39506-7dbf-450f-b05d-224c1e9bf6c2'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  paused: [33mfalse[39m,
+  appData: { mediaType: [32m'audioType'[39m },
+  transport_state: [32m'ICE:completed, DTLS:connecting'[39m,
+  codecs: [ [32m'audio/opus'[39m ]
+} [35m+1ms[39m
+[[36m12/1/2025, 12:47:05:803[39m] [[33mServer[39m] Produce {
+  kind: [32m'audio'[39m,
+  type: [32m'audioType'[39m,
+  producer_id: [32m'14e39506-7dbf-450f-b05d-224c1e9bf6c2'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peerInfo: {
+    peer_name: [32m'Noman-dev'[39m,
+    isDesktop: [33mtrue[39m,
+    os: [32m'Linux'[39m,
+    browser: [32m'Firefox 145.0'[39m
+  }
+} [35m+60ms[39m
+[[36m12/1/2025, 12:47:05:807[39m] [[33mRoom[39m] Producer added to audio level observer { producer: { producerId: [32m'14e39506-7dbf-450f-b05d-224c1e9bf6c2'[39m } } [35m+5ms[39m
+[[36m12/1/2025, 12:47:05:914[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+107ms[39m
+[[36m12/1/2025, 12:47:05:985[39m] [[33mServer[39m] Video off data [32m'Noman-dev'[39m [35m+68ms[39m
+[[36m12/1/2025, 12:47:06:002[39m] [[33mPeer[39m] Update peer info {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  type: [32m'video'[39m,
+  status: [33mfalse[39m,
+  broadcast: [33mtrue[39m
+} [35m+199ms[39m
+[[36m12/1/2025, 12:47:06:012[39m] [[33mServer[39m] updatePeerInfo broadcast data [32m''[39m [35m+16ms[39m
+[[36m12/1/2025, 12:51:38:189[39m] [[33mHtmlInjector[39m] File changed: /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html [32m''[39m [35m+5m[39m
+[[36m12/1/2025, 12:51:38:190[39m] [[33mHtmlInjector[39m] Reloaded file /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html into cache [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 12:51:40:730[39m] [[33mHtmlInjector[39m] File changed: /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html [32m''[39m [35m+2s[39m
+[[36m12/1/2025, 12:51:40:731[39m] [[33mHtmlInjector[39m] Reloaded file /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html into cache [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 12:55:45:182[39m] [[33mHtmlInjector[39m] File changed: /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html [32m''[39m [35m+4m[39m
+[[36m12/1/2025, 12:55:45:183[39m] [[33mHtmlInjector[39m] Reloaded file /home/noman-dev3/Downloads/mirotalksfu-main/public/views/Room.html into cache [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:253[39m] [[33mServer[39m] isPeerPresenter Check {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_uuid: [32m'4b0bc53a-6505-4078-a5dd-936638c18f94'[39m,
+  isPresenter: [33mtrue[39m
+} [35m+16m[39m
+[[36m12/1/2025, 13:03:31:254[39m] [[33mServer[39m] [Disconnect] - peer name { peer_name: [32m'Noman-dev'[39m, reason: [32m'transport close'[39m } [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:255[39m] [[33mPeer[39m] Starting peer cleanup {
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m2[39m,
+  producers: [33m1[39m,
+  consumers: [33m0[39m
+} [35m+16m[39m
+[[36m12/1/2025, 13:03:31:256[39m] [[33mRoom[39m] ---> transport close [id:[32m'7aaf6ea9-ef30-499d-90ce-debe6d293176'[39m] [35m+16m[39m
+[[36m12/1/2025, 13:03:31:256[39m] [[33mRoom[39m] ---> transport close [id:[32m'eaea6089-c2a8-4af6-b5c7-a03c2658fb88'[39m] [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:256[39m] [[33mPeer[39m] Peer cleanup completed successfully {
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  transports: [33m0[39m,
+  producers: [33m0[39m,
+  consumers: [33m0[39m
+} [35m+1ms[39m
+[[36m12/1/2025, 13:03:31:257[39m] [[33mRoom[39m] Audio Level Observer closed [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 13:03:31:257[39m] [[33mRoom[39m] ---------------> Router is now closed as the last peer has left the room { room: [32m'room_hvofyiwtp'[39m } [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:257[39m] [[33mRoom[39m] Router closed { router_id: [32m'9d174d18-8f63-4746-9b66-1b24bfb1f992'[39m } [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:258[39m] [[33mRoom[39m] Room closed { room_id: [32m'room_hvofyiwtp'[39m } [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:258[39m] [[33mServer[39m] Peer removed from the room {
+  room_id: [32m'room_hvofyiwtp'[39m,
+  peer_id: [32m'i_Lj67SBDYMk0BU1AAAJ'[39m,
+  peer_name: [32m'Noman-dev'[39m,
+  peer_counts: [33m0[39m,
+  isPresenter: [33mtrue[39m
+} [35m+4ms[39m
+[[36m12/1/2025, 13:03:31:258[39m] [[33mServer[39m] [Disconnect] - Last peer - current presenters grouped by roomId {} [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:258[39m] [[33mServer[39m] [Disconnect] - Last peer - current active rooms [] [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:259[39m] [[33mServer[39m] [Disconnect] - Last peer - current active RTMP streams { rtmpStreams: [33m0[39m, rtmpFileStreamsCount: [33m0[39m, rtmpUrlStreamsCount: [33m0[39m } [35m+0ms[39m
+[[36m12/1/2025, 13:03:31:313[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_hvofyiwtp'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+54ms[39m
+[[36m12/1/2025, 13:04:42:168[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_hvofyiwtp'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+1m[39m
+[[36m12/1/2025, 13:04:50:801[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_zwkm9cj0a'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+8s[39m
+[[36m12/1/2025, 13:05:37:025[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_4t9cjfxny'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+46s[39m
+[[36m12/1/2025, 13:09:58:440[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_0e02b9zz7'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+4m[39m
+[[36m12/1/2025, 13:10:17:508[39m] [[33mServer[39m] /join/:roomId {
+  OIDCUserAuthenticated: [33mfalse[39m,
+  hostUserAuthenticated: [33mfalse[39m,
+  roomExist: [33mfalse[39m,
+  roomCount: [33m0[39m,
+  extraInfo: {
+    roomId: [32m'room_jcme8tu0p'[39m,
+    OIDCUserEnabled: [33mfalse[39m,
+    hostProtected: [33mfalse[39m,
+    hostAuthenticated: [33mtrue[39m,
+    OIDCAllowRoomCreationForAuthUsers: [33mtrue[39m
+  },
+  allowRoomAccess: [33mtrue[39m
+} [35m+19s[39m
+[[36m12/1/2025, 13:11:46:899[39m] [[33mServer[39m] PROCESS [32m'SIGTERM'[39m [35m+1m[39m
+[[36m12/1/2025, 13:11:46:899[39m] [[33mServer[39m] [32mSIGTERM received, starting graceful shutdown...[39m [32m''[39m
+[[36m12/1/2025, 13:11:46:900[39m] [[33mServer[39m] Closing HTTP server... [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 13:11:46:900[39m] [[33mServer[39m] Closing 0 active rooms... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 13:11:46:901[39m] [[33mServer[39m] Closing 0 RTMP streams... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 13:11:46:901[39m] [[33mServer[39m] Disconnecting all Socket.IO clients... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 13:11:46:902[39m] [[33mServer[39m] Closing Socket.IO server... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 13:11:46:902[39m] [[33mServer[39m] Closing 4 mediasoup workers... [32m''[39m [35m+0ms[39m
+[[36m12/1/2025, 13:11:46:903[39m] [[33mServer[39m] Cleaning up HTML injector... [32m''[39m [35m+1ms[39m
+[[36m12/1/2025, 13:11:46:905[39m] [[33mServer[39m] [32mGraceful shutdown completed successfully[39m [32m''[39m

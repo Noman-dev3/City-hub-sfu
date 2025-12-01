@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <!-- Title and Icon -->
+
+    <title id="title">City-Hub - Host Protected login required.</title>
+    <link id="icon" rel="shortcut icon" href="../images/logo.svg" />
+    <link id="appleTouchIcon" rel="apple-touch-icon" href="../images/logo.svg" />
+
+    <!-- Meta Information -->
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta id="description" name="description"
+        content="City-Hub powered by WebRTC and mediasoup, Real-time Simple Secure Fast video calls, messaging and screen sharing capabilities in the browser." />
+    <meta id="keywords" name="keywords"
+        content="webrtc, miro, mediasoup, mediasoup-client, self hosted, voip, sip, real-time communications, chat, messaging, meet, webrtc stun, webrtc turn, webrtc p2p, webrtc sfu, video meeting, video chat, video conference, multi video chat, multi video conference, peer to peer, p2p, sfu, rtc, alternative to, zoom, microsoft teams, google meet, jitsi, meeting" />
+
+    <!-- https://ogp.me -->
+
+    <meta property="og:type" content="{{OG_TYPE}}" />
+    <meta property="og:site_name" content="{{OG_SITE_NAME}}" />
+    <meta property="og:title" content="{{OG_TITLE}}" />
+    <meta property="og:description" content="{{OG_DESCRIPTION}}" />
+    <meta property="og:image" content="{{OG_IMAGE}}" />
+    <meta property="og:url" content="{{OG_URL}}" />
+
+    <!-- StyleSheet -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" />
+    <link rel="stylesheet" type="text/css" href="../css/landing.css" />
+    <link rel="stylesheet" type="text/css" href="../css/Translate.css" />
+
+    <!-- Bootstrap 5 -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- https://animate.style 4 using for swal fadeIn-Out -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Font Awesome CDN for icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- Js scripts -->
+
+    <script async src="../js/Umami.js"></script>
+    <script defer src="../js/Brand.js"></script>
+    <script async src="../js/Translate.js"></script>
+
+    <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <!-- xss -->
+    <script src="https://cdn.jsdelivr.net/npm/xss/dist/xss.min.js"></script>
+
+    <!-- axios -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- sweetalert -->
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8"></script>
+
+    <style>
+    body {
+        background: #0d1117;
+        color: #c9d1d9;
+        font-family: "IBM Plex Sans", sans-serif;
+    }
+
+    .site-header, .site-footer {
+        padding: 20px 0;
+    }
+
+    .header-brand h1 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        color: #58a6ff;
+    }
+
+    .hero {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    .login-card, .room-card {
+        background: #161b22;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 400px;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .form-input, .form-select {
+        width: 100%;
+        padding: 12px 14px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        border: 1px solid #30363d;
+        background: #0d1117;
+        color: #c9d1d9;
+    }
+
+    .form-input:focus, .form-select:focus {
+        outline: none;
+        border-color: #58a6ff;
+    }
+
+    .button-primary {
+        background: #238636;
+        border: none;
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+    .button-primary:hover {
+        background: #2ea043;
+    }
+
+    .footer-links a, .footer-social-links a {
+        color: #58a6ff;
+        text-decoration: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+</style>
+
+</head>
+
+<body class="is-boxed has-animations">
+
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner d-flex justify-content-center">
+                    <div class="brand header-brand">
+                        <h1>City-Hub</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- LOGIN FORM -->
+            <section class="hero">
+                <div id="loginForm" class="login-card">
+                    <h2 style="margin-bottom: 20px;">Login</h2>
+
+                    <input id="username" class="form-input" type="text" placeholder="Username" maxlength="254" required />
+                    <input id="password" class="form-input" type="password" placeholder="Password" maxlength="36" required />
+
+                    <button id="loginButton" class="button button-primary">Login</button>
+                </div>
+
+                <!-- JOIN ROOM SECTION -->
+                <div id="joinRoomForm" class="room-card" style="display:none; margin-top:40px;">
+                    <h2 class="mb-3">Join a Room</h2>
+
+                    <select id="selectRoom" class="form-select bg-dark text-light"></select>
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button id="generateRoomButton" class="button button-primary" title="Generate random room">
+                            Generate Room
+                        </button>
+
+                        <button id="joinSelectRoomButton" class="button button-primary flex-fill">
+                            Join Room
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner text-center">
+
+                    <p>&copy; 2025 City-Hub. All rights reserved.</p>
+
+                    <ul class="footer-links list-reset">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="https://sfu.mirotalk.com/api/v1/docs/">Rest API</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Keep all your scripts exactly the same -->
+    <script defer src="../js/Utils.js"></script>
+    <script defer src="../js/Login.js"></script>
+    <script defer src="../js/Landing.js"></script>
+</body>
+
+
+</html>

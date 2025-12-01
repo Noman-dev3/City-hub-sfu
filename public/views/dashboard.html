@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City-Hub | Dashboard</title>
+    <link rel="shortcut icon" href="../images/logo.svg" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <a href="#" class="brand">
+                <div class="brand-logo">CH</div>
+                <span class="brand-name">City-Hub</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#meetings" class="nav-link">
+                        <i class="fas fa-video"></i>
+                        <span>Meetings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#files" class="nav-link">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Files</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="user-profile">
+                <div class="user-avatar">G</div>
+                <div class="user-info">
+                    <div class="user-name">Guest User</div>
+                    <div class="text-secondary" style="font-size: 0.8rem;">Online</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home View -->
+            <div id="home-view" class="view-section fade-in">
+                <div class="header">
+                    <h1 class="page-title">Dashboard Overview</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" onclick="window.location.hash='meetings'">
+                            <i class="fas fa-plus"></i>
+                            <span>New Meeting</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="card stat-card">
+                        <div class="stat-icon"
+                            style="background: rgba(99, 102, 241, 0.15); color: var(--primary-color);">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="active-rooms-count">0</h3>
+                            <p>Active Rooms</p>
+                        </div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-icon"
+                            style="background: rgba(236, 72, 153, 0.15); color: var(--secondary-color);">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="participants-count">0</h3>
+                            <p>Total Participants</p>
+                        </div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-icon"
+                            style="background: rgba(16, 185, 129, 0.15); color: var(--success-color);">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="meetings-count">0</h3>
+                            <p>Total Meetings</p>
+                        </div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-icon"
+                            style="background: rgba(245, 158, 11, 0.15); color: var(--warning-color);">
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="storage-count">0 GB</h3>
+                            <p>Storage Used</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Quick Actions -->
+                <div class="grid-container" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                    <div class="card">
+                        <div class="card-header"
+                            style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <h3 style="margin: 0;">Recent Activity</h3>
+                            <button class="btn btn-secondary btn-sm">View All</button>
+                        </div>
+                        <div class="activity-list" id="activity-list">
+                            <p class="text-secondary">No recent activity</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 1.5rem;">Quick Actions</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <button class="btn btn-secondary" onclick="window.location.hash='meetings'">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Start Meeting</span>
+                            </button>
+                            <button class="btn btn-secondary" onclick="window.location.hash='files'">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload File</span>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Invite User</span>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-headset"></i>
+                                <span>Support</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meetings View -->
+            <div id="meetings-view" class="view-section" style="display: none;">
+                <div class="header">
+                    <h1 class="page-title">Meetings</h1>
+                </div>
+
+                <div class="grid-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <!-- Create Meeting -->
+                    <div class="card">
+                        <h2 style="margin-bottom: 1.5rem;">Create New Meeting</h2>
+                        <form id="create-meeting-form">
+                            <div class="form-group">
+                                <label class="form-label">Room Name</label>
+                                <div style="display: flex; gap: 0.75rem;">
+                                    <input type="text" class="form-input" id="room-name-input"
+                                        placeholder="Enter room name" required>
+                                    <button type="button" class="btn btn-secondary btn-sm" id="generate-room-btn"
+                                        title="Generate random room name">
+                                        <i class="fas fa-random"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Meeting Type</label>
+                                <select class="form-input">
+                                    <option value="video">Video Conference</option>
+                                    <option value="audio">Audio Only</option>
+                                    <option value="webinar">Webinar</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Create Meeting</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Join Meeting -->
+                    <div class="card">
+                        <h2 style="margin-bottom: 1.5rem;">Join Meeting</h2>
+                        <form id="join-meeting-form">
+                            <div class="form-group">
+                                <label class="form-label">Room ID or Link</label>
+                                <input type="text" class="form-input" id="room-id-input" placeholder="Enter room ID"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-secondary" style="width: 100%;">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Join Meeting</span>
+                            </button>
+                        </form>
+
+                        <div style="margin-top: 2rem;">
+                            <h4 style="margin-bottom: 1rem; color: var(--text-secondary);">Recent Meetings</h4>
+                            <div id="recent-meetings-list">
+                                <!-- Recent meetings will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Files View -->
+            <div id="files-view" class="view-section" style="display: none;">
+                <div class="header">
+                    <h1 class="page-title">File Manager</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Upload</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card file-drop-zone" id="file-drop-zone">
+                    <i class="fas fa-cloud-upload-alt"
+                        style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>Drag & Drop files here</h3>
+                    <p class="text-secondary">or click to browse</p>
+                </div>
+
+                <div class="card">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h3 style="margin: 0;">My Files</h3>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-filter"></i></button>
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-sort"></i></button>
+                        </div>
+                    </div>
+                    <div id="files-grid" class="file-list">
+                        <!-- Files will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="settings-view" class="view-section" style="display: none;">
+                <div class="header">
+                    <h1 class="page-title">Settings</h1>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">Application Settings</h3>
+                    <p class="text-secondary">Settings configuration coming soon...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>
